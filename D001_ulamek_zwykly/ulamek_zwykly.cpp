@@ -23,12 +23,22 @@ void cUlamekZwykly::Skracanie()
     long long int NWD=NajwiekszyWspolnyDzielnik(m_Licznik, m_Mianownik);
     m_Licznik=m_Licznik/NWD;
     m_Mianownik=m_Mianownik/NWD;
+    if(m_Mianownik<0)
+    {
+        m_Mianownik=m_Mianownik*(-1);
+        m_Licznik=m_Licznik*(-1);
+    }
 }
 
 void cUlamekZwykly::WyciaganieCalosciPrzed()
 {
-    m_Calosci=m_Licznik/m_Mianownik;
+    m_Calosci=(m_Licznik/m_Mianownik)+m_Calosci;
     m_Licznik=m_Licznik%m_Mianownik;
+    if(m_Calosci<0)
+    {
+        if(m_Licznik<0)
+            m_Licznik=m_Licznik*(-1);
+    }
 }
 
 void cUlamekZwykly::CalosciDoLicznika()
@@ -181,13 +191,19 @@ long long int cUlamekZwykly::NajwiekszyWspolnyDzielnik(long long int LiczbaA, lo
         LiczbaA=LiczbaB;
         LiczbaB=reszta;
     }
-    return LiczbaA;
+    if(LiczbaA>0)
+        return LiczbaA;
+    else
+        return (LiczbaA*(-1));
 }
 
 long long int cUlamekZwykly::NajmniejszaWspolnaWielokrotnosc(long long int LiczbaA, long long int LiczbaB)
 {
     long long int NWD=NajwiekszyWspolnyDzielnik(LiczbaA, LiczbaB);
-    return ((LiczbaA/NWD)*LiczbaB);
+    if (((LiczbaA/NWD)*LiczbaB)>0)
+        return ((LiczbaA/NWD)*LiczbaB);
+    else
+        return ((LiczbaA/NWD)*LiczbaB* (-1));
 }
 
 cUlamekZwykly cUlamekZwykly::operator*(cUlamekZwykly UlamekP)
@@ -272,6 +288,7 @@ bool cUlamekZwykly::operator==(cUlamekZwykly UlamekP)
     bool rezultat=(LicznikLewy==LicznikPrawy);
     return rezultat;
 }
+
 bool cUlamekZwykly::operator!=(cUlamekZwykly UlamekP)
 {
     cUlamekZwykly UlamekLewy(m_Calosci, m_Licznik, m_Mianownik);
@@ -288,6 +305,7 @@ bool cUlamekZwykly::operator!=(cUlamekZwykly UlamekP)
     bool rezultat=(LicznikLewy!=LicznikPrawy);
     return rezultat;
 }
+
 bool cUlamekZwykly::operator>(cUlamekZwykly UlamekP)
 {
     cUlamekZwykly UlamekLewy(m_Calosci, m_Licznik, m_Mianownik);
@@ -304,6 +322,7 @@ bool cUlamekZwykly::operator>(cUlamekZwykly UlamekP)
     bool rezultat=(LicznikLewy>LicznikPrawy);
     return rezultat;
 }
+
 bool cUlamekZwykly::operator<(cUlamekZwykly UlamekP)
 {
     cUlamekZwykly UlamekLewy(m_Calosci, m_Licznik, m_Mianownik);
@@ -320,6 +339,7 @@ bool cUlamekZwykly::operator<(cUlamekZwykly UlamekP)
     bool rezultat=(LicznikLewy<LicznikPrawy);
     return rezultat;
 }
+
 bool cUlamekZwykly::operator>=(cUlamekZwykly UlamekP)
 {
     cUlamekZwykly UlamekLewy(m_Calosci, m_Licznik, m_Mianownik);
@@ -336,6 +356,7 @@ bool cUlamekZwykly::operator>=(cUlamekZwykly UlamekP)
     bool rezultat=(LicznikLewy>=LicznikPrawy);
     return rezultat;
 }
+
 bool cUlamekZwykly::operator<=(cUlamekZwykly UlamekP)
 {
     cUlamekZwykly UlamekLewy(m_Calosci, m_Licznik, m_Mianownik);
