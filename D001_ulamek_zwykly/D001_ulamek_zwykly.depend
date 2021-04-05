@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1617486293 source:d:\obrazy\nasze dokumenty\zosia\szkola\inf\cpp\d001_ulamek_zwykly\main.cpp
+	<iostream>
+	"ulamek_zwykly.h"
+
+1617486384 d:\obrazy\nasze dokumenty\zosia\szkola\inf\cpp\d001_ulamek_zwykly\ulamek_zwykly.h
+	<iostream>
+
+1617486219 source:d:\obrazy\nasze dokumenty\zosia\szkola\inf\cpp\d001_ulamek_zwykly\ulamek_zwykly.cpp
+	<iostream>
+	<cmath>
+	"ulamek_zwykly.h"
+
+1617645448 source:d:\nasze dokumenty\zosia\szkola\inf\cpp\d001_ulamek_zwykly\main.cpp
+	<iostream>
+	"ulamek_zwykly.h"
+
+1617644942 d:\nasze dokumenty\zosia\szkola\inf\cpp\d001_ulamek_zwykly\ulamek_zwykly.h
+	<iostream>
+
+1617645601 source:d:\nasze dokumenty\zosia\szkola\inf\cpp\d001_ulamek_zwykly\ulamek_zwykly.cpp
+	<iostream>
+	<cmath>
+	"ulamek_zwykly.h"
+
