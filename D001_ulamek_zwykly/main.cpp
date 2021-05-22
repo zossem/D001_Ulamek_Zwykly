@@ -6,9 +6,10 @@ using namespace std;
 int main()
 {
     cUlamekZwykly Pierwszy(1, 3, 4);
-    cUlamekZwykly Drugi(1, -436, 8);
+    cUlamekZwykly Drugi(1, 0, 8);
     cUlamekZwykly Trzeci;
 
+    //cout<<Drugi<<"  "<<Pierwszy<<endl;
     Drugi.Wypisz();
 
     Trzeci=Pierwszy+Drugi;

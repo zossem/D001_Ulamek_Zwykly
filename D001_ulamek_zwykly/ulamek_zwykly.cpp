@@ -374,3 +374,9 @@ bool cUlamekZwykly::operator<=(cUlamekZwykly UlamekP)
     return rezultat;
 }
 
+ostream& operator<<(ostream& tekst, const cUlamekZwykly Ulamek)
+{
+    tekst<<Ulamek.m_Calosci<<" "<<Ulamek.m_Licznik<<"/"<<Ulamek.m_Mianownik;
+    return tekst;
+}
+

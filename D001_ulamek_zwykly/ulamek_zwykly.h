@@ -34,7 +34,7 @@ public:
     bool operator>=(cUlamekZwykly UlamekP);
     bool operator<=(cUlamekZwykly UlamekP);
 
-
+    friend ostream& operator<<(ostream& tekst, const cUlamekZwykly Ulamek);
 private:
 
     long long int m_Licznik, m_Mianownik, m_Calosci;
